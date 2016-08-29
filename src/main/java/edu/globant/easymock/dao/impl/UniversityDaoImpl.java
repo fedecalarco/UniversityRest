@@ -110,7 +110,7 @@ public class UniversityDaoImpl implements UniversityDao {
     }
 
     @Override
-    public Collection<University> getAll() {
+    public List<University> getAll() {
 
         List<University> universityList = null;
 

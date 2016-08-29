@@ -2,6 +2,7 @@ package edu.globant.easymock.webservice;
 
 import edu.globant.easymock.model.University;
 
+import javax.annotation.security.DeclareRoles;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
@@ -61,5 +62,8 @@ public interface UniversityRESTService {
     @DELETE
     @Path("/{universityId}")
     Response removerUniversity(@PathParam("universityId") String universityId);
+
+    @DELETE
+    Response removeAllUniversities();
 
 }

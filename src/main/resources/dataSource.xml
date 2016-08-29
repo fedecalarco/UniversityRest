@@ -34,7 +34,4 @@
         <property name="password" value="1234"></property>
     </bean>
 
-    <!-- test new branch - Fede h Fede -->
-
-
 </beans>

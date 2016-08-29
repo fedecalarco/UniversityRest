@@ -2,7 +2,8 @@ package edu.globant.easymock.dao;
 
 import edu.globant.easymock.model.University;
 
-import java.util.Collection;
+
+import java.util.List;
 
 /**
  * Created by federico.calarco on 8/18/2016.
@@ -13,7 +14,7 @@ public interface UniversityDao {
 
     University getById(Long universityId);
 
-    Collection<University> getAll();
+    List<University> getAll();
 
     void delete(Long universityId);
 

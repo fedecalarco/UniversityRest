@@ -2,7 +2,7 @@ package edu.globant.easymock.service;
 
 import edu.globant.easymock.model.University;
 
-import java.util.Collection;
+import java.util.List;
 
 /**
  * This class bla bla bla
@@ -15,7 +15,7 @@ public interface UniversityService {
 
     University getById(Long universityId);
 
-    Collection<University> getAll();
+    List<University> getAll();
 
     void delete(Long universityId);
 

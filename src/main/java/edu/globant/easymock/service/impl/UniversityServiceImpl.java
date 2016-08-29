@@ -6,8 +6,12 @@ import edu.globant.easymock.service.UniversityService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
+import org.springframework.jdbc.core.namedparam.SqlParameterSource;
 
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
 
 /**
@@ -19,15 +23,14 @@ public class UniversityServiceImpl implements UniversityService {
 
     UniversityDao universityDao;
 
-
     @Override
     public University save(University university) {
 
-        logger.info("university saved: " + university);
+        logger.debug("university saved: " + university);
 
         University uni = universityDao.save(university);
 
-        logger.info("university saved: " + uni);
+        logger.debug("university saved: " + uni);
 
         // TODO: IF NOT EMPTY, NULL, ETC
 
@@ -40,17 +43,28 @@ public class UniversityServiceImpl implements UniversityService {
     }
 
     @Override
-    public Collection<University> getAll() {
-        return universityDao.getAll();
+    public List<University> getAll() {
+
+        List<University> universities = universityDao.getAll();
+
+        return universities;
     }
 
     @Override
     public void delete(Long universityId) {
 
+        logger.debug("Delete universityId: " + universityId);
+
+        universityDao.delete(universityId);
+
+
     }
 
     @Override
     public University update(University university) {
+
+        String query = "UPDATE universities SET  WHERE universityId = :universityId ";
+
         return null;
     }
 

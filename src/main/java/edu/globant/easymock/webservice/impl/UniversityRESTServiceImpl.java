@@ -28,11 +28,9 @@ public class UniversityRESTServiceImpl implements UniversityRESTService {
     @Override
     public Response getUniversities() {
 
-        List<University> universityList = new ArrayList<University>();
+        List<University> universityList = (ArrayList)universityService.getAll();
 
-        universityList = (List) universityService.getAll();
-
-        logger.debug("All universities: " + universityList);
+        logger.debug("all universities size: " + universityList.size());
 
         return Response.ok(universityList).build();
     }
@@ -72,8 +70,17 @@ public class UniversityRESTServiceImpl implements UniversityRESTService {
     }
 
     @Override
-    public Response removerUniversity(@PathParam("universityId") String universityId) {
+    public Response removerUniversity(String universityId) {
+
+        universityService.delete(Long.valueOf(universityId));
+
         return Response.ok().build();
+    }
+
+    @Override
+    public Response removeAllUniversities() {
+       // universityService.removeAllUniversities();
+        return null;
     }
 
 
