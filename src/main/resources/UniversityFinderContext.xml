@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jaxrs="http://cxf.apache.org/jaxrs"
+       xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://cxf.apache.org/jaxrs http://cxf.apache.org/schemas/jaxrs.xsd">
+
+
+    <import resource="classpath:dataSource.xml"/>
+
+    <!--
+        <context:annotation-config></context:annotation-config>
+
+        <context:component-scan base-package="edu.globant.easymock.dao.impl">
+        </context:component-scan>
+    -->
+
+
+    <!-- to support Java-to-JSON and vice-versa conversion -->
+    <bean id="jsonProvider" class="org.codehaus.jackson.jaxrs.JacksonJsonProvider"/>
+
+    <!-- CXF CONFIGURATION -->
+    <jaxrs:server id="server" address="/">
+        <jaxrs:serviceBeans>
+            <ref bean="universityFinderRESTServiceImpl"/>
+        </jaxrs:serviceBeans>
+
+        <jaxrs:providers>
+            <ref bean="jsonProvider"/>
+        </jaxrs:providers>
+    </jaxrs:server>
+
+
+    <!-- BEANS -->
+
+    <!-- Webservice -->
+    <bean id="universityFinderRESTServiceImpl" class="edu.globant.easymock.webservice.impl.UniversityRESTServiceImpl">
+        <property name="universityService" ref="universityService"/>
+    </bean>
+
+
+    <!-- Service -->
+
+    <bean id="universityService" class="edu.globant.easymock.service.impl.UniversityServiceImpl">
+        <property name="universityDao" ref="universityDao2"/>
+    </bean>
+
+    <!-- Dao -->
+    <bean id="universityDao" class="edu.globant.easymock.dao.impl.UniversityDaoImpl">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+
+    <bean id="universityDao2" class="edu.globant.easymock.dao.impl.UniversityDaoJdbcImpl">
+        <property name="dataSource" ref="dataSource2"/>
+    </bean>
+
+
+    <!-- H2 CONFIGURATION -->
+</beans>

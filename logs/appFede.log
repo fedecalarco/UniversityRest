@@ -1,0 +1,37 @@
+2016-26-19 16:26:16.693 [main] INFO  edu.globant.easymock.Main - universityFinder.name: HELLO WORLD
+2016-34-19 16:34:26.640 [main] INFO  edu.globant.easymock.Main - universityFinder.name: HELLO WORLD
+2016-34-19 16:34:26.641 [main] INFO  edu.globant.easymock.Main - Calling universityFinder without beans 
+2016-34-19 16:34:43.421 [main] INFO  edu.globant.easymock.Main - universityFinder.name: HELLO WORLD
+2016-34-19 16:34:43.423 [main] DEBUG edu.globant.easymock.Main - Calling universityFinder without beans 
+2016-35-19 16:35:03.711 [main] DEBUG edu.globant.easymock.Main - universityFinder.name: HELLO WORLD
+2016-35-19 16:35:03.712 [main] DEBUG edu.globant.easymock.Main - Calling universityFinder without beans 
+2016-41-19 17:41:36.680 [main] DEBUG edu.globant.easymock.Main - universityFinder.name: HELLO WORLD
+2016-41-19 17:41:36.681 [main] DEBUG edu.globant.easymock.Main - Calling universityFinder without beans 
+2016-42-23 12:42:29.232 [main] INFO  edu.globant.easymock.service.impl.UniversityServiceImpl - university saved: edu.globant.easymock.model.University@57c03d88
+2016-44-23 12:44:18.281 [main] INFO  edu.globant.easymock.service.impl.UniversityServiceImpl - university saved: edu.globant.easymock.model.University@6d7fc27
+2016-51-23 12:51:02.410 [main] INFO  edu.globant.easymock.service.impl.UniversityServiceImpl - university saved: edu.globant.easymock.model.University@78a773fd
+2016-51-23 12:51:02.556 [main] INFO  edu.globant.easymock.service.impl.UniversityServiceImpl - university saved: edu.globant.easymock.model.University@78a773fd
+2016-25-23 14:25:14.151 [main] INFO  edu.globant.easymock.service.impl.UniversityServiceImpl - university saved: edu.globant.easymock.model.University@57c03d88
+2016-26-23 14:26:02.688 [main] INFO  edu.globant.easymock.service.impl.UniversityServiceImpl - university saved: edu.globant.easymock.model.University@16aa8654
+2016-26-23 14:26:02.842 [main] INFO  edu.globant.easymock.service.impl.UniversityServiceImpl - university saved: edu.globant.easymock.model.University@16aa8654
+2016-36-23 14:36:27.051 [main] INFO  edu.globant.easymock.service.impl.UniversityServiceImpl - university saved: edu.globant.easymock.model.University@16aa8654
+2016-36-23 14:36:27.212 [main] INFO  edu.globant.easymock.service.impl.UniversityServiceImpl - university saved: edu.globant.easymock.model.University@16aa8654
+2016-37-23 14:37:05.710 [main] INFO  edu.globant.easymock.service.impl.UniversityServiceImpl - university saved: edu.globant.easymock.model.University@57c03d88
+2016-37-23 14:37:05.862 [main] INFO  edu.globant.easymock.service.impl.UniversityServiceImpl - university saved: edu.globant.easymock.model.University@57c03d88
+2016-38-23 14:38:12.390 [main] INFO  edu.globant.easymock.service.impl.UniversityServiceImpl - university saved: edu.globant.easymock.model.University@57c03d88
+2016-38-23 14:38:12.533 [main] INFO  edu.globant.easymock.service.impl.UniversityServiceImpl - university saved: edu.globant.easymock.model.University@57c03d88
+2016-38-23 14:38:40.882 [main] INFO  edu.globant.easymock.service.impl.UniversityServiceImpl - university saved: edu.globant.easymock.model.University@57c03d88
+2016-38-23 14:38:41.034 [main] INFO  edu.globant.easymock.service.impl.UniversityServiceImpl - university saved: edu.globant.easymock.model.University@57c03d88
+2016-39-23 14:39:18.196 [main] INFO  edu.globant.easymock.service.impl.UniversityServiceImpl - university saved: edu.globant.easymock.model.University@6d7fc27
+2016-39-23 14:39:18.329 [main] INFO  edu.globant.easymock.service.impl.UniversityServiceImpl - university saved: edu.globant.easymock.model.University@6d7fc27
+2016-45-23 14:45:59.517 [main] INFO  edu.globant.easymock.service.impl.UniversityServiceImpl - university saved: edu.globant.easymock.model.University@6d7fc27
+2016-45-23 14:45:59.659 [main] INFO  edu.globant.easymock.service.impl.UniversityServiceImpl - university saved: edu.globant.easymock.model.University@6d7fc27
+2016-46-23 14:46:50.056 [main] INFO  edu.globant.easymock.service.impl.UniversityServiceImpl - university saved: edu.globant.easymock.model.University@57c03d88
+2016-46-23 14:46:50.206 [main] INFO  edu.globant.easymock.service.impl.UniversityServiceImpl - university saved: edu.globant.easymock.model.University@57c03d88
+2016-49-23 14:49:00.850 [main] INFO  edu.globant.easymock.service.impl.UniversityServiceImpl - university saved: edu.globant.easymock.model.University@6d7fc27
+2016-49-23 14:49:00.997 [main] INFO  edu.globant.easymock.service.impl.UniversityServiceImpl - university saved: edu.globant.easymock.model.University@6d7fc27
+2016-53-23 14:53:06.268 [main] INFO  edu.globant.easymock.service.impl.UniversityServiceImpl - university saved: edu.globant.easymock.model.University@78a773fd
+2016-53-23 14:53:44.123 [main] INFO  edu.globant.easymock.service.impl.UniversityServiceImpl - university saved: edu.globant.easymock.model.University@16aa8654
+2016-53-23 14:53:44.267 [main] INFO  edu.globant.easymock.service.impl.UniversityServiceImpl - university saved: edu.globant.easymock.model.University@16aa8654
+2016-56-23 14:56:24.829 [main] INFO  edu.globant.easymock.service.impl.UniversityServiceImpl - university saved: edu.globant.easymock.model.University@57c03d88
+2016-56-23 14:56:24.998 [main] INFO  edu.globant.easymock.service.impl.UniversityServiceImpl - university saved: edu.globant.easymock.model.University@57c03d88
