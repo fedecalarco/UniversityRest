@@ -59,6 +59,9 @@ public class UniversityRESTServiceImpl implements UniversityRESTService {
 
         universityService.save(university);
 
+        logger.debug(university);
+
+        // TODO: if persist was correct response 201 else ..
 
         return Response.created(URI.create("universities/"+university.getId())).build();
 

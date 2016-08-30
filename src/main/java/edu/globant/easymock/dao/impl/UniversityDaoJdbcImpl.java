@@ -1,6 +1,7 @@
 package edu.globant.easymock.dao.impl;
 
 import edu.globant.easymock.dao.UniversityDao;
+import edu.globant.easymock.model.Career;
 import edu.globant.easymock.model.University;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.RowMapper;
@@ -35,6 +36,7 @@ public class UniversityDaoJdbcImpl implements UniversityDao {
 
         String query = "INSERT INTO universities (name,location,address,webpage,phone,email) VALUES (:name, :location, :address, :webpage, :phone, :email)";
 
+
         Map namedParameters = new HashMap();
 
         namedParameters.put("name", university.getName());
@@ -44,7 +46,8 @@ public class UniversityDaoJdbcImpl implements UniversityDao {
         namedParameters.put("phone", university.getPhone());
         namedParameters.put("email", university.getEmail());
 
-        namedParameterJdbcTemplate.update(query,namedParameters);
+
+        namedParameterJdbcTemplate.update(query, namedParameters);
 
         return university;
     }
@@ -53,9 +56,12 @@ public class UniversityDaoJdbcImpl implements UniversityDao {
     public University getById(Long universityId) {
 
         String query = "SELECT * FROM universities WHERE id = :universityId";
+
+        String query2 = "SELECT u.name, c.name FROM universities as u INNER JOIN careers as c ON u.id = c.id INNER JOIN universities_careers as uc ON u.id = c.id WHERE uc.id_universities = :universityId";
+
         SqlParameterSource namedParameters = new MapSqlParameterSource("universityId", Long.valueOf(universityId));
 
-        University university = (University) namedParameterJdbcTemplate.queryForObject(query,namedParameters, new UniversityRowMapper());
+        University university = (University) namedParameterJdbcTemplate.queryForObject(query2, namedParameters, new UniversityRowMapper());
 
         return university;
     }
@@ -63,7 +69,7 @@ public class UniversityDaoJdbcImpl implements UniversityDao {
     @Override
     public List<University> getAll() {
 
-        List<University> universities =  namedParameterJdbcTemplate.query(fetchAllUniversityiesQuery, new UniversityRowMapper());
+        List<University> universities = namedParameterJdbcTemplate.query(fetchAllUniversityiesQuery, new UniversityRowMapper());
 
         return universities;
     }
@@ -75,7 +81,7 @@ public class UniversityDaoJdbcImpl implements UniversityDao {
 
         SqlParameterSource namedParameters = new MapSqlParameterSource("universityId", Long.valueOf(universityId));
 
-        namedParameterJdbcTemplate.update(query,namedParameters);
+        namedParameterJdbcTemplate.update(query, namedParameters);
     }
 
     @Override
@@ -103,6 +109,10 @@ public class UniversityDaoJdbcImpl implements UniversityDao {
             university.setWebpage(resultSet.getString("webpage"));
             university.setPhone(resultSet.getString("phone"));
             university.setEmail(resultSet.getString("email"));
+
+            Career career = new Career();
+
+            career.setName(resultSet.getString("nameCareer"));
 
             return university;
         }

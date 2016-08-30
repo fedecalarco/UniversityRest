@@ -16,6 +16,11 @@ public class Career {
         this.name = name;
     }
 
+    public Career(String name){
+        this.name = name;
+
+    }
+
     public Long getId() {
         return id;
     }
