@@ -1,9 +1,4 @@
-package edu.globant.easymock.dao.impl;
-
-import org.junit.Before;
-import org.junit.Test;
-
-import static org.junit.Assert.*;
+package edu.globant.universityfinder.dao.impl;
 
 /**
  * Created by federico.calarco on 8/19/2016.

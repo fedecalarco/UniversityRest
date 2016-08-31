@@ -1,4 +1,4 @@
-package edu.globant.easymock.service.impl;
+package edu.globant.universityfinder.service.impl;
 
 /**
  * Created by federico.calarco on 8/17/2016.
