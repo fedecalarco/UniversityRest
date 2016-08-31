@@ -1,13 +1,12 @@
-package edu.globant.easymock.webservice.impl;
+package edu.globant.universityfinder.webservice.impl;
 
-import edu.globant.easymock.model.University;
-import edu.globant.easymock.service.UniversityService;
-import edu.globant.easymock.service.impl.UniversityServiceImpl;
-import edu.globant.easymock.webservice.UniversityRESTService;
+import edu.globant.universityfinder.model.University;
+import edu.globant.universityfinder.service.UniversityService;
+import edu.globant.universityfinder.service.impl.UniversityServiceImpl;
+import edu.globant.universityfinder.webservice.UniversityRESTService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import javax.ws.rs.PathParam;
 import javax.ws.rs.core.Response;
 import java.net.URI;
 import java.util.ArrayList;
@@ -28,7 +27,7 @@ public class UniversityRESTServiceImpl implements UniversityRESTService {
     @Override
     public Response getUniversities() {
 
-        List<University> universityList = (ArrayList)universityService.getAll();
+        List<University> universityList = (ArrayList) universityService.getAll();
 
         logger.debug("all universities size: " + universityList.size());
 
@@ -57,13 +56,18 @@ public class UniversityRESTServiceImpl implements UniversityRESTService {
     @Override
     public Response addUniversity(University university) {
 
-        universityService.save(university);
+        logger.debug("Creating a new university: " + university.getName());
 
-        logger.debug(university);
+        Long universityId = universityService.save(university);
 
-        // TODO: if persist was correct response 201 else ..
+        logger.debug("New id generated: " + universityId);
 
-        return Response.created(URI.create("universities/"+university.getId())).build();
+        if(universityId == null){
+            //TODO: Make exception
+            throw new NullPointerException("Error creating university: " + university.getName());
+        }
+
+        return Response.created(URI.create("universities/" + universityId)).build();
 
     }
 
@@ -82,7 +86,7 @@ public class UniversityRESTServiceImpl implements UniversityRESTService {
 
     @Override
     public Response removeAllUniversities() {
-       // universityService.removeAllUniversities();
+        // universityService.removeAllUniversities();
         return null;
     }
 

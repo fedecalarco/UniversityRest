@@ -1,6 +1,6 @@
-package edu.globant.easymock.dao;
+package edu.globant.universityfinder.dao;
 
-import edu.globant.easymock.model.Career;
+import edu.globant.universityfinder.model.Career;
 
 import java.util.Collection;
 

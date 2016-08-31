@@ -1,16 +1,11 @@
-package edu.globant.easymock.service.impl;
+package edu.globant.universityfinder.service.impl;
 
-import edu.globant.easymock.dao.UniversityDao;
-import edu.globant.easymock.model.University;
-import edu.globant.easymock.service.UniversityService;
+import edu.globant.universityfinder.dao.UniversityDao;
+import edu.globant.universityfinder.model.University;
+import edu.globant.universityfinder.service.UniversityService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
-import org.springframework.jdbc.core.namedparam.SqlParameterSource;
 
-import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
 
@@ -24,17 +19,24 @@ public class UniversityServiceImpl implements UniversityService {
     UniversityDao universityDao;
 
     @Override
-    public University save(University university) {
+    public Long save(University university) {
 
-        logger.debug("university saved: " + university);
+        logger.debug("University to save: " + university.getName());
 
         University uni = universityDao.save(university);
 
-        logger.debug("university saved: " + uni);
+        logger.debug("University saved: " + uni.getName());
+
+        Long universityId = uni.getId();
 
         // TODO: IF NOT EMPTY, NULL, ETC
 
-        return uni;
+        if(universityId == null){
+            //TODO: Make an exception
+            throw new NullPointerException("universityId null");
+        }
+
+        return universityId;
     }
 
     @Override

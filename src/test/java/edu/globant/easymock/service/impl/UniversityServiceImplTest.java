@@ -1,21 +1,5 @@
 package edu.globant.easymock.service.impl;
 
-import edu.globant.easymock.dao.UniversityDao;
-import edu.globant.easymock.model.Career;
-import edu.globant.easymock.model.University;
-import edu.globant.easymock.service.UniversityService;
-import org.easymock.internal.matchers.Null;
-import org.junit.After;
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
-import org.easymock.EasyMock;
-
-import java.util.ArrayList;
-import java.util.List;
-
-import static org.junit.Assert.*;
-
 /**
  * Created by federico.calarco on 8/17/2016.
  */

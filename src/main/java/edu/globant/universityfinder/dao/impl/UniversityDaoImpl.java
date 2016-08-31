@@ -1,7 +1,7 @@
-package edu.globant.easymock.dao.impl;
+package edu.globant.universityfinder.dao.impl;
 
-import edu.globant.easymock.dao.UniversityDao;
-import edu.globant.easymock.model.University;
+import edu.globant.universityfinder.dao.UniversityDao;
+import edu.globant.universityfinder.model.University;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -9,7 +9,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.sql.Connection;
 import java.util.List;
 import javax.sql.DataSource;

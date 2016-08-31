@@ -1,4 +1,4 @@
-package edu.globant.easymock.model;
+package edu.globant.universityfinder.model;
 
 /**
  * Created by federico.calarco on 8/17/2016.

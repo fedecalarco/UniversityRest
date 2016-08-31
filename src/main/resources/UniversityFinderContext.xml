@@ -35,23 +35,23 @@
     <!-- BEANS -->
 
     <!-- Webservice -->
-    <bean id="universityFinderRESTServiceImpl" class="edu.globant.easymock.webservice.impl.UniversityRESTServiceImpl">
+    <bean id="universityFinderRESTServiceImpl" class="edu.globant.universityfinder.webservice.impl.UniversityRESTServiceImpl">
         <property name="universityService" ref="universityService"/>
     </bean>
 
 
     <!-- Service -->
 
-    <bean id="universityService" class="edu.globant.easymock.service.impl.UniversityServiceImpl">
+    <bean id="universityService" class="edu.globant.universityfinder.service.impl.UniversityServiceImpl">
         <property name="universityDao" ref="universityDao2"/>
     </bean>
 
     <!-- Dao -->
-    <bean id="universityDao" class="edu.globant.easymock.dao.impl.UniversityDaoImpl">
+    <bean id="universityDao" class="edu.globant.universityfinder.dao.impl.UniversityDaoImpl">
         <property name="dataSource" ref="dataSource"/>
     </bean>
 
-    <bean id="universityDao2" class="edu.globant.easymock.dao.impl.UniversityDaoJdbcImpl">
+    <bean id="universityDao2" class="edu.globant.universityfinder.dao.impl.UniversityDaoJdbcImpl">
         <property name="dataSource" ref="dataSource2"/>
     </bean>
 

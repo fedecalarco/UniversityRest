@@ -1,4 +1,4 @@
-package edu.globant.easymock.model;
+package edu.globant.universityfinder.model;
 
 import java.io.Serializable;
 import java.util.ArrayList;

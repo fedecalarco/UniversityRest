@@ -1,8 +1,7 @@
-package edu.globant.easymock.webservice;
+package edu.globant.universityfinder.webservice;
 
-import edu.globant.easymock.model.University;
+import edu.globant.universityfinder.model.University;
 
-import javax.annotation.security.DeclareRoles;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
